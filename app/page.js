@@ -1,7 +1,11 @@
+import Hero from "@/components/Hero";
+import StockPhotos from "@/components/StockPhotos";
+
 export default function Home() {
   return (
     <main>
-      <h1>Hi</h1>
+      <Hero />
+      <StockPhotos />
     </main>
   );
 }
