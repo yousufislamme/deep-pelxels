@@ -1,25 +1,32 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createClient } from "pexels";
 import "./sp.css";
+import { Context } from "@/Context/Context";
 
 const StockPhotos = () => {
   const [myPhotos, setMyPhotos] = useState([]);
-  const [selectedPhoto, setSelectedPhoto] = useState(null); // State to keep track of selected photo
+  const [selectedPhoto, setSelectedPhoto] = useState(); // State to keep track of selected photo
+  const { searchGlo } = useContext(Context);
   const client = createClient(
     "jCS9KVx1hRI7y877Kg5NO1lkeIfFs9dXz28MxIWlQ4Z4lqPRndtrZRsy"
   );
 
   useEffect(() => {
-    const query = "cat";
+    // Fetch photos from the Pexels API
     client.photos
-      .search({ query, per_page: 10 })
+      // query thek jekono kichu search kora jabe.
+      .search({ query: searchGlo || "winter", per_page: 10 })
       .then((response) => {
         setMyPhotos(response.photos);
       })
       .catch((error) => {
-        console.error("all error in your code ", error);
+        console.error("Error fetching photos:", error);
       });
+  }, [searchGlo]); // Run once on component mount
+
+  useEffect(() => {
+    client.photos.search({});
   }, []);
 
   const handlePhotoClick = (photo) => {
@@ -35,6 +42,7 @@ const StockPhotos = () => {
       <div className="container px-8 py-10">
         <div className="flex justify-between px-20 lg:w-[1200px]">
           <h2 className="text-xl">Free Stock Photos</h2>
+
           <p>Trending</p>
         </div>
       </div>
@@ -46,7 +54,7 @@ const StockPhotos = () => {
               className="item"
               onClick={() => handlePhotoClick(photo)}
             >
-              <img src={photo.src.medium} alt={photo.alt} />
+              <img src={photo.src.medium} alt={photo.url} />
             </div>
           ))}
         </section>
