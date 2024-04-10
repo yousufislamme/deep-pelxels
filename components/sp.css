@@ -10,24 +10,6 @@
   margin-bottom: 20px; /* Spacing between images */
 }
 
-@media (max-width: 1200px) {
-  .container {
-    column-count: 3; /* Adjust for smaller screens */
-  }
-}
-
-@media (max-width: 900px) {
-  .container {
-    column-count: 2; /* Adjust for even smaller screens */
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    column-count: 1; /* Adjust for small screens, single column */
-  }
-}
-
 .modal {
   position: fixed;
   top: 0;
@@ -52,4 +34,22 @@
 .modal-content img {
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    column-count: 3; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    column-count: 2; /* Adjust for even smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    column-count: 1; /* Adjust for small screens, single column */
+  }
 }
