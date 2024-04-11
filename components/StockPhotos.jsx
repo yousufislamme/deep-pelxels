@@ -3,7 +3,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { createClient } from "pexels";
 import "./sp.css";
 import { Context } from "@/Context/Context";
-
+import Button from "./Button";
+import { CiBookmark } from "react-icons/ci";
+import { SlLike } from "react-icons/sl";
 const StockPhotos = () => {
   const [myPhotos, setMyPhotos] = useState([]);
   const [selectedPhoto, setSelectedPhoto] = useState(); // State to keep track of selected photo
@@ -16,7 +18,7 @@ const StockPhotos = () => {
     // Fetch photos from the Pexels API
     client.photos
       // query thek jekono kichu search kora jabe.
-      .search({ query: searchGlo || "winter", per_page: 10 })
+      .search({ query: searchGlo || "winter", per_page: 100 })
       .then((response) => {
         setMyPhotos(response.photos);
       })
@@ -62,8 +64,36 @@ const StockPhotos = () => {
       {selectedPhoto && (
         <div className="modal" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="flex mb-4">
+              <div className="flex justify-between w-full">
+                <div className="flex  w-full">
+                  {/* image */}
+                  <div className="size-12 bg-slate-500 rounded-full mr-3"></div>
+                  {/* title name  */}
+                  <div>
+                    <h2 className="font-semibold">
+                      {selectedPhoto.photographer}
+                    </h2>
+                    <p>Follow</p>
+                  </div>
+                </div>
+              </div>
+              {/* buttons */}
+              <div className=" flex gap-4 w-[200px]">
+                <Button
+                  btnTitle="Collect"
+                  icon={CiBookmark}
+                  className="block  border-[1px] text-sm rounded-lg px-4 py-2 hover:border-slate-900"
+                />
+                <Button
+                  btnTitle="Like"
+                  icon={SlLike}
+                  btnIconClass="flex"
+                  className="block border-[1px] text-sm rounded-lg px-4 py-2 hover:border-slate-900"
+                />
+              </div>
+            </div>
             <img src={selectedPhoto.src.original} alt={selectedPhoto.alt} />
-            <p>By: {selectedPhoto.photographer}</p>
           </div>
         </div>
       )}
