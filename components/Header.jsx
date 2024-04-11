@@ -25,7 +25,7 @@ const Header = () => {
         />
       </div>
       {/* navigation */}
-      <div className="flex justify-around w-[230px] items-center gap-3">
+      <div className="flex justify-around items-center gap-3">
         <Button btnTitle="Explore" className="text-slate-700" />
         <Button btnTitle="License" className="text-slate-700" />
         <button>
