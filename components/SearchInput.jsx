@@ -1,10 +1,10 @@
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 
-const SearchInput = ({ onSubmit, onChange }) => {
+const SearchInput = ({ onSubmit, onChange, className }) => {
   return (
     <>
-      <form onSubmit={onSubmit} className="flex">
+      <form onSubmit={onSubmit} className={`${className} flex `}>
         <input
           type="search"
           name="Search bar"
