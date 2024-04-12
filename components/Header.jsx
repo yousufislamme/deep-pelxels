@@ -12,13 +12,13 @@ const Header = ({ isVisible, searchClass }) => {
   return (
     <div className="relative">
       <header
-        className={`bg-white border-[1px] w-full fixed flex  justify-between items-center  px-10 py-2 ${
-          isVisible ? "none" : "fixed absolute top-0 right-0"
+        className={`fixed flex w-full items-center justify-between  border-[1px] bg-white  px-10 py-2 ${
+          isVisible ? "none" : "fixed absolute right-0 top-0"
         }} `}
       >
         <div>
           <Link href="/">
-            <h1 className="font-extrabold flex items-center text-lg">
+            <h1 className="flex items-center text-lg font-extrabold">
               <FcStackOfPhotos className="text-[40px]" /> Deep-Pexels
             </h1>
           </Link>
@@ -32,14 +32,14 @@ const Header = ({ isVisible, searchClass }) => {
           />
         </div>
         {/* navigation */}
-        <div className="flex justify-around items-center gap-3">
+        <div className="flex items-center justify-around gap-3">
           <Button btnTitle="Explore" className="text-slate-700" />
           <Button btnTitle="License" className="text-slate-700" />
           <button>
             <MdNotifications className="text-xl" />
           </button>
           <Button
-            className="font-semibold hover:bg-[#05a071] text-white bg-[#05a081] p-4 rounded-md "
+            className="rounded-md bg-[#05a081] p-4 font-semibold text-white hover:bg-[#05a071] "
             btnTitle="Update"
           />
         </div>

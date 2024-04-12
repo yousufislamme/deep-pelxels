@@ -10,7 +10,7 @@ const Button = ({
     <button
       href={href}
       onClick={onClick}
-      className={`text-md font-semibold flex flex-row justify-center items-center gap-2 ${className}`}
+      className={`text-md flex flex-row items-center justify-center gap-2 font-semibold ${className}`}
     >
       <span className={`${btnIconClass}`}>{Icon && <Icon />}</span>
       {btnTitle}
