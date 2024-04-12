@@ -13,7 +13,7 @@ const StockPhotos = () => {
   const [like, setLike] = useState(false);
   const { searchGlo } = useContext(Context);
   const client = createClient(
-    "jCS9KVx1hRI7y877Kg5NO1lkeIfFs9dXz28MxIWlQ4Z4lqPRndtrZRsy"
+    "jCS9KVx1hRI7y877Kg5NO1lkeIfFs9dXz28MxIWlQ4Z4lqPRndtrZRsy",
   );
 
   useEffect(() => {
@@ -67,13 +67,13 @@ const StockPhotos = () => {
       {selectedPhoto && (
         <div className="modal" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="flex mb-4">
-              <div className="flex justify-between w-full">
+            <div className="mb-4 flex">
+              <div className="flex w-full justify-between">
                 <div className="flex w-full">
                   {/* Profile picture */}
                   <div
                     style={{ backgroundColor: `${selectedPhoto.avg_color}` }}
-                    className={`size-12 bg-["${selectedPhoto.avg_color}"] rounded-full mr-3`}
+                    className={`size-12 bg-["${selectedPhoto.avg_color}"] mr-3 rounded-full`}
                   >
                     {console.log("color", selectedPhoto.avg_color)}
                     <img src={selectedPhoto.photographer_url} alt="Pic" />
@@ -92,17 +92,17 @@ const StockPhotos = () => {
                 <Button
                   btnTitle="Collect"
                   icon={CiBookmark}
-                  className="block border-[1px] text-sm rounded-lg px-4 py-2 hover:border-slate-900"
+                  className="block rounded-lg border-[1px] px-4 py-2 text-sm hover:border-slate-900"
                 />
                 <Button
                   onClick={handleLike}
                   btnTitle={like ? "Like" : "Liked"}
                   icon={SlLike}
                   btnIconClass="flex"
-                  className="block border-[1px] text-sm rounded-lg px-4 py-2 hover:border-slate-900"
+                  className="block rounded-lg border-[1px] px-4 py-2 text-sm hover:border-slate-900"
                 />
                 <a
-                  className="block border-[1px] text-mg font-semibold rounded-lg px-4 py-2 hover:border-slate-900"
+                  className="text-mg block rounded-lg border-[1px] px-4 py-2 font-semibold hover:border-slate-900"
                   href={`${selectedPhoto.src.original}`}
                   download
                 >

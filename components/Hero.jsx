@@ -1,6 +1,6 @@
 "use client";
 import { Context } from "@/Context/Context";
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import SearchInput from "./SearchInput";
 
 const Hero = () => {
@@ -9,8 +9,8 @@ const Hero = () => {
     "The best free stock photos, royalty free images & videos shared by creators.";
   return (
     <div className="w-full">
-      <div className="w-full h-[30rem] border bg-hero-pattern bg-no-repeat object-cover bg-pink-300 flex flex-col justify-center items-center">
-        <h1 className="text-3xl w-[600px] mx-auto text-center font-bold text-white font-sans ">
+      <div className=" flex h-[30rem] w-full flex-col items-center justify-center border bg-pink-300 bg-hero-pattern bg-no-repeat object-cover">
+        <h1 className="mx-auto w-[600px] text-center font-sans text-3xl font-bold text-white ">
           {headingText}
         </h1>
         <div className="mt-3">
@@ -20,7 +20,7 @@ const Hero = () => {
             onSubmit={handleSearchSubmit}
           />
         </div>
-        <p className="mt-2 text-slate-400 font-semibold">
+        <p className="mt-2 font-semibold text-slate-400">
           <span className="text-white">Trading:</span> Lorem ipsum dolor sit
           amet consectetur
         </p>

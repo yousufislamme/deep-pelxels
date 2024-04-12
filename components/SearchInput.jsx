@@ -10,10 +10,10 @@ const SearchInput = ({ onSubmit, onChange, className }) => {
           name="Search bar"
           onChange={onChange}
           placeholder="Search for free photos"
-          className="text-lg bg-slate-200  md-w-[250px] lg:w-[450px] px-5 py-2 rounded-l-md outline-none font-semibold"
+          className="md-w-[250px] rounded-l-md  bg-slate-200 px-5 py-2 text-lg font-semibold outline-none lg:w-[450px]"
         />
-        <button type="submit" className="bg-blue-400 px-3 rounded-r-md">
-          <IoIosSearch className="text-2xl cursor-pointer" />
+        <button type="submit" className="rounded-r-md bg-blue-400 px-3">
+          <IoIosSearch className="cursor-pointer text-2xl" />
         </button>
       </form>
     </>
