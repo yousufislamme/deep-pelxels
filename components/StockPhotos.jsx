@@ -76,10 +76,7 @@ const StockPhotos = () => {
                     className={`size-12 bg-["${selectedPhoto.avg_color}"] rounded-full mr-3`}
                   >
                     {console.log("color", selectedPhoto.avg_color)}
-                    <img
-                      src={getPexelsProfileUrl(selectedPhoto.photographer_url)}
-                      alt="Pic"
-                    />
+                    <img src={selectedPhoto.photographer_url} alt="Pic" />
                   </div>
                   {/* Photographer name */}
                   <div>
@@ -91,7 +88,7 @@ const StockPhotos = () => {
                 </div>
               </div>
               {/* Buttons */}
-              <div className="flex gap-4 w-[200px]">
+              <div className="flex gap-4 ">
                 <Button
                   btnTitle="Collect"
                   icon={CiBookmark}
@@ -104,6 +101,13 @@ const StockPhotos = () => {
                   btnIconClass="flex"
                   className="block border-[1px] text-sm rounded-lg px-4 py-2 hover:border-slate-900"
                 />
+                <a
+                  className="block border-[1px] text-mg font-semibold rounded-lg px-4 py-2 hover:border-slate-900"
+                  href={`${selectedPhoto.src.original}`}
+                  download
+                >
+                  Download
+                </a>
               </div>
             </div>
             <img src={selectedPhoto.src.original} alt={selectedPhoto.alt} />

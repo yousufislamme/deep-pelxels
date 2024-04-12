@@ -1,6 +1,14 @@
-const Button = ({ icon: Icon, btnIconClass, btnTitle, onClick, className }) => {
+const Button = ({
+  icon: Icon,
+  btnIconClass,
+  href,
+  btnTitle,
+  onClick,
+  className,
+}) => {
   return (
     <button
+      href={href}
       onClick={onClick}
       className={`text-md font-semibold flex flex-row justify-center items-center gap-2 ${className}`}
     >
