@@ -8,8 +8,8 @@ const Hero = () => {
   const headingText =
     "The best free stock photos, royalty free images & videos shared by creators.";
   return (
-    <div>
-      <div className="w-full h-[30rem] border bg-hero-pattern  flex flex-col justify-center items-center">
+    <div className="w-full">
+      <div className="w-full h-[30rem] border bg-hero-pattern bg-no-repeat object-cover bg-pink-300 flex flex-col justify-center items-center">
         <h1 className="text-3xl w-[600px] mx-auto text-center font-bold text-white font-sans ">
           {headingText}
         </h1>
